@@ -1,4 +1,7 @@
-package userLogin;
+package user_login;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -6,6 +9,7 @@ import java.util.Scanner;
 
 public class LogIn {
 
+    private static final Logger logger = LogManager.getLogger("user_login.LogIn");
     public void authenticate() throws FileNotFoundException {
 
         File file = new File("users.txt");
@@ -16,10 +20,10 @@ public class LogIn {
             String storedUser = fileScanner.nextLine();
             String storedHashedPass = fileScanner.nextLine();
 
-            System.out.print("Login: ");
+            logger.info("Login: ");
             String inputUser = keyboard.nextLine();
 
-            System.out.print("Password: ");
+            logger.info("Password: ");
             String inputPass = keyboard.nextLine();
 
             String inputHashedPass = PasswordUtils.hashPassword(inputPass);
@@ -27,9 +31,9 @@ public class LogIn {
             if (inputUser.equals(storedUser) &&
                     inputHashedPass.equals(storedHashedPass)) {
 
-                System.out.println("Password and login match");
+                logger.info("Password and login match");
             } else {
-                System.out.println("Invalid password or login");
+                logger.info("Invalid password or login");
             }
         }
     }

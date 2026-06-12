@@ -1,9 +1,6 @@
-package dataOperations;
-
+package data_operations;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
-
 public class Operations
 {
     public Student findStudent(List<Student> students, int expectedId)

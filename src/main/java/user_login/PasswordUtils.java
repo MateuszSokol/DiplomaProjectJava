@@ -1,4 +1,4 @@
-package userLogin;
+package user_login;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -18,7 +18,7 @@ public class PasswordUtils {
             return sb.toString();
 
         } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("Błąd hashywania hasła", e);
+            throw new RuntimeException("Error during password hashing", e);
         }
     }
 }

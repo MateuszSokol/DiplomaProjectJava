@@ -4,13 +4,13 @@ public class Book
 {
     private String bookTitle;
     private String author;
-    private String ISBN;
+    private String isbn;
 
     public Book(String bookTitle,String author,String ISBN)
     {
         this.bookTitle = bookTitle;
         this.author = author;
-        this.ISBN = ISBN;
+        this.isbn = ISBN;
     }
 
     public String getBookTitle() {
@@ -29,12 +29,12 @@ public class Book
         this.author = author;
     }
 
-    public String getISBN() {
-        return ISBN;
+    public String getIsbn() {
+        return isbn;
     }
 
-    public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 
     @Override
@@ -42,7 +42,7 @@ public class Book
         return "Book{" +
                 "bookTitle='" + bookTitle + '\'' +
                 ", author='" + author + '\'' +
-                ", ISBN='" + ISBN + '\'' +
+                ", ISBN='" + isbn + '\'' +
                 '}';
     }
 }

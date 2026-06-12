@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        # Define the filename property this ./logs means it will create a logs folder in the root directory
+        <Property name="filename">./logs</Property>
+    </Properties>
+    <Appenders>
+        # Define the RollingFile appender that will write to a file the name is "file" which we need to pass to the logger to use this appender
+        <RollingFile name ="file"
+                     fileName = "${filename}/logdemo.log"
+                     filePattern = "${filename}/logdemo-%d{HH_mm_ss_SSS}.log">
+            # Define the layout for the RollingFile appender it's the same as the Console appender
+            <PatternLayout>
+                <pattern>%d{HH:mm:ss} [%t] %-5level %Logger{36} - %msg%n</pattern>
+            </PatternLayout>
+            # if file reaches this size it will create new file
+            <SizeBasedTriggeringPolicy size="100 MB"/>
+        </RollingFile>
+        <Console name="Console" target="SYSTEM_OUT">
+            # define the for the console appender
+            <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %Logger{36} - %msg%n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        # Define the root logger with appender Console, if we set additivity to false it will not use the parent (root) logger
+        <Logger name = "log4jdemo" level ="info" additivity ="false">
+            # here we are using the console appender
+            <AppenderRef ref="Console"/>
+            #here w are using the file appender
+            <AppenderRef ref="file"/>
+
+
+        </Logger>
+        <Root level="fatal">
+            # here we are using console appender
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="file"/>
+        </Root>
+    </Loggers>
+</Configuration>

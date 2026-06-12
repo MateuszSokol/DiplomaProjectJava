@@ -1,9 +1,13 @@
-package org.example.BankingAccount;
+package org.example.banking_account;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class BankingAccount {
     private String ownerFullName;
     private String accountNumber;
     private double balance;
+    private static final Logger logger = LogManager.getLogger("log4jdemo.org.example.BankingAccount");
 
     // Constructor
     public BankingAccount(String ownerFullName, String accountNumber) {
@@ -15,9 +19,9 @@ public class BankingAccount {
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
-            System.out.println("Deposit successful!");
+            logger.info("Deposit successful!");
         } else {
-            System.out.println("Amount must be positive.");
+            logger.info("Amount must be positive.");
         }
     }
     public double getBalance() {
@@ -27,19 +31,19 @@ public class BankingAccount {
     public void withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
-            System.out.println("Withdraw successful!");
+            logger.info("Withdraw successful!");
         } else if (amount > balance) {
-            System.out.println("Insufficient funds.");
+            logger.info("Insufficient funds.");
         } else {
-            System.out.println("Only positive amount acceptable.");
+            logger.info("Only positive amount acceptable.");
         }
     }
 
 
     public void displayInfo() {
-        System.out.println("Account Holder: " + ownerFullName);
-        System.out.println("Account Number: " + accountNumber);
-        System.out.printf("Balance: %.2f\n", balance);
+        logger.info("Account Holder: {}", ownerFullName);
+        logger.info("Account Number: {}", accountNumber);
+        logger.info("Balance: %.2f\n", balance);
     }
 
     public String getOwnerFullName() {

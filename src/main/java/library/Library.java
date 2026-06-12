@@ -1,5 +1,8 @@
 package library;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -7,14 +10,14 @@ import java.util.List;
 public class Library
 {
     private List<Book> books = new ArrayList<>();
-
+    private static final Logger logger = LogManager.getLogger("log4jdemo.library.Library");
     public void addBook(Book book) {
         books.add(book);
     }
 
     public void displayBooks() {
         for (Book book : books) {
-            System.out.println(book);
+            logger.info(book);
         }
     }
 
@@ -23,7 +26,7 @@ public class Library
 
         while (iterator.hasNext()) {
             Book book = iterator.next();
-            if (book.getISBN().equals(isbn)) {
+            if (book.getIsbn().equals(isbn)) {
                 iterator.remove();
                 return true;
             }
@@ -45,7 +48,8 @@ public class Library
     {
         for (Book book:books)
         {
-            System.out.println(book.toString());
+
+            logger.info(book.toString());
         }
     }
 
