@@ -33,5 +33,5 @@ jobs:
           mvn clean verify sonar:sonar \
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.organization=mateuszsokol \
-            -Dsonar.projectKey=TibiaFishingAdvancedMacro \
+            -Dsonar.projectKey=DiplomaProjectJava \
             -Dsonar.login=$SONAR_TOKEN
