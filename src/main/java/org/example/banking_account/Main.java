@@ -6,7 +6,7 @@ import library.Library;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import save_read_data.MyFile;
-import user_login.LogIn;
+
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -50,8 +50,6 @@ public class Main {
         MyFile.readDataFromFile(PATH_TO_FILE);
         MyFile.saveDataToFile(PATH_TO_FILE);
 
-        //Executing user login methods
-        LogIn.authenticate(PATH_TO_FILE);
 
     }
 }

@@ -27,9 +27,8 @@ public class StudentTest
     @Test
     void testFindStudent() {
         Student s1 = new Student("Mateusz", "Male"); // ID = 1
-        Student s2 = new Student("Anna", "Female");  // ID = 2
 
-        Student found = s1.findStudent(Student.getStudents(), 1);
+        Student found = s1.findStudent(Student.getStudents(), s1.getStudentId());
 
         assertNotNull(found);
         assertEquals("Mateusz", found.getStudentName());
