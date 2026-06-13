@@ -12,8 +12,10 @@ import user_login.LogIn;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     private static final Logger logger = LogManager.getLogger(Main.class);
+    private static final String PATH_TO_FILE = "PathToFile/someFile.txt";
     public static void main(String[] args)
     {
+
         //Executing student class methods
         Student myStudent = new Student("Mateusz","Male");
         //find student by its id
@@ -45,11 +47,11 @@ public class Main {
         myBankingAccount.displayInfo();
 
         //Executing MyFile methods
-        MyFile.readDataFromFile("PathToFile/someFile.txt");
-        MyFile.saveDataToFile("PathToFile/someFile.txt");
+        MyFile.readDataFromFile(PATH_TO_FILE);
+        MyFile.saveDataToFile(PATH_TO_FILE);
 
         //Executing user login methods
-        LogIn.authenticate("PathToFile/someFile.txt");
+        LogIn.authenticate(PATH_TO_FILE);
 
     }
 }
