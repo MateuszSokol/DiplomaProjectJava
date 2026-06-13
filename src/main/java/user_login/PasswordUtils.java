@@ -1,16 +1,37 @@
 package user_login;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class PasswordUtils {
+    private static final Logger logger = LogManager.getLogger("user_login.PasswordUtils");
+    private static PasswordUtils INSTANCE;
+    private PasswordUtils()
+    {
+
+
+    }
+    public static PasswordUtils getInstance()
+    {
+        if(INSTANCE == null) {
+            INSTANCE = new PasswordUtils();
+        }
+
+        return INSTANCE;
+    }
+
+
 
     public static String hashPassword(String password) {
+        StringBuilder sb = new StringBuilder();
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             byte[] hashedBytes = md.digest(password.getBytes());
 
-            StringBuilder sb = new StringBuilder();
+
             for (byte b : hashedBytes) {
                 sb.append(String.format("%02x", b));
             }
@@ -18,7 +39,8 @@ public class PasswordUtils {
             return sb.toString();
 
         } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("Error during password hashing", e);
+            logger.error("Error during password encryption");
         }
+        return sb.toString();
     }
 }

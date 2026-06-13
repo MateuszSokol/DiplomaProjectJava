@@ -6,11 +6,11 @@ public class Book
     private String author;
     private String isbn;
 
-    public Book(String bookTitle,String author,String ISBN)
+    public Book(String bookTitle,String author,String isbn)
     {
         this.bookTitle = bookTitle;
         this.author = author;
-        this.isbn = ISBN;
+        this.isbn = isbn;
     }
 
     public String getBookTitle() {

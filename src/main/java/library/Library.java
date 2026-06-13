@@ -15,11 +15,6 @@ public class Library
         books.add(book);
     }
 
-    public void displayBooks() {
-        for (Book book : books) {
-            logger.info(book);
-        }
-    }
 
     public boolean removeBook(String isbn) {
         Iterator<Book> iterator = books.iterator();
@@ -48,10 +43,12 @@ public class Library
     {
         for (Book book:books)
         {
-
             logger.info(book.toString());
         }
     }
 
-
+    public List<Book> getBooks()
+    {
+        return books;
+    }
 }

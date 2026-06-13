@@ -1,43 +1,60 @@
 package data_operations;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Student
 {
-    private Integer studentId;
+    private static Integer studentId =0;
     private String studentName;
     private String gender;
-    List<Student> students = new ArrayList<>();
+    private static List<Student> students = new ArrayList<>();
 
-    public Student(String studentName, Integer studentId, String gender) {
+    public Student(String studentName, String gender) {
         this.studentName = studentName;
-        this.studentId = studentId;
         this.gender = gender;
+        studentId++;
+        students.add(this);
     }
 
     public String getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
 
     public Integer getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(Integer studentId) {
-        this.studentId = studentId;
+    public static List<Student> getStudents() {
+        return students;
     }
 
     public String getStudentName() {
         return studentName;
     }
 
-    public void setStudentName(String studentName) {
-        this.studentName = studentName;
-    }
 
+    public Student findStudent(List<Student> students, int expectedId)
+    {
+        return students.stream()
+                .filter(s -> s.getStudentId().equals(expectedId))
+                .findFirst()
+                .orElse(null);
+
+    }
+    public List<Student> findStudentsByGender(List<Student> students,String gender)
+    {
+
+        return students.stream()
+                .filter(s -> s.getGender().equals(gender))
+                .toList();
+    }
+    public List<Student> sortedStudentByName(List<Student> students)
+    {
+        return students.stream()
+                .sorted(Comparator.comparing(Student::getStudentName))
+                .toList();
+    }
 }
