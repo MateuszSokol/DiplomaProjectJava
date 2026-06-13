@@ -1,0 +1,30 @@
+16:33:45 [main] INFO  33ogger - Book{bookTitle='The Lord of the Rings', author='J. R. R. Tolkien', ISBN='9780544003415'}
+16:33:45 [main] INFO  46ogger - Book{bookTitle='The Lord of the Rings', author='J. R. R. Tolkien', ISBN='9780544003415'}
+16:33:45 [main] INFO  22ogger - Deposit successful!
+16:33:45 [main] INFO  44ogger - Account Holder: Mateusz Brokuł
+16:33:45 [main] INFO  45ogger - Account Number: PL00 1111 1111 2222 2222 2222 2222
+16:33:45 [main] INFO  46ogger - Balance: %.2f
+
+16:33:45 [main] INFO  34ogger - Withdraw successful!
+16:33:45 [main] INFO  44ogger - Account Holder: Mateusz Brokuł
+16:33:46 [main] INFO  45ogger - Account Number: PL00 1111 1111 2222 2222 2222 2222
+16:33:46 [main] INFO  46ogger - Balance: %.2f
+
+16:33:46 [main] ERROR 23ogger - File not found in path: PathToFile/someFile.txt
+16:33:46 [main] ERROR 34ogger - error during opening file: PathToFile/someFile.txt
+16:33:46 [main] ERROR 39ogger - File not found
+16:35:39 [main] INFO  org.example.banking_account.Main - Book{bookTitle='The Lord of the Rings', author='J. R. R. Tolkien', ISBN='9780544003415'}
+16:35:39 [main] INFO  library.Library - Book{bookTitle='The Lord of the Rings', author='J. R. R. Tolkien', ISBN='9780544003415'}
+16:35:39 [main] INFO  org.example.banking_account.BankingAccount - Deposit successful!
+16:35:39 [main] INFO  org.example.banking_account.BankingAccount - Account Holder: Mateusz Brokuł
+16:35:39 [main] INFO  org.example.banking_account.BankingAccount - Account Number: PL00 1111 1111 2222 2222 2222 2222
+16:35:39 [main] INFO  org.example.banking_account.BankingAccount - Balance: %.2f
+
+16:35:39 [main] INFO  org.example.banking_account.BankingAccount - Withdraw successful!
+16:35:39 [main] INFO  org.example.banking_account.BankingAccount - Account Holder: Mateusz Brokuł
+16:35:39 [main] INFO  org.example.banking_account.BankingAccount - Account Number: PL00 1111 1111 2222 2222 2222 2222
+16:35:39 [main] INFO  org.example.banking_account.BankingAccount - Balance: %.2f
+
+16:35:39 [main] ERROR save_read_data.MyFile - File not found in path: PathToFile/someFile.txt
+16:35:39 [main] ERROR save_read_data.MyFile - error during opening file: PathToFile/someFile.txt
+16:35:39 [main] ERROR user_login.LogIn - File not found
