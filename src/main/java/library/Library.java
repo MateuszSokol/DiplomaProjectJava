@@ -10,7 +10,7 @@ import java.util.List;
 public class Library
 {
     private List<Book> books = new ArrayList<>();
-    private static final Logger logger = LogManager.getLogger("log4jdemo.library.Library");
+    private static final Logger logger = LogManager.getLogger(Library.class);
     public void addBook(Book book) {
         books.add(book);
     }

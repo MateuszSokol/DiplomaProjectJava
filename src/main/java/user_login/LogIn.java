@@ -9,10 +9,10 @@ import java.util.Scanner;
 
 public class LogIn {
 
-    private static final Logger logger = LogManager.getLogger("user_login.LogIn");
-    public void authenticate() throws FileNotFoundException {
+    private static final Logger logger = LogManager.getLogger(LogIn.class);
+    public static void authenticate(String pathToFile) {
 
-        File file = new File("users.txt");
+        File file = new File(pathToFile);
 
         try (Scanner fileScanner = new Scanner(file);
              Scanner keyboard = new Scanner(System.in)) {
@@ -35,6 +35,8 @@ public class LogIn {
             } else {
                 logger.info("Invalid password or login");
             }
+        } catch (FileNotFoundException e) {
+            logger.error("File not found");
         }
     }
 }

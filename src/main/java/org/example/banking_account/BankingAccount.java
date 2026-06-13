@@ -7,7 +7,7 @@ public class BankingAccount {
     private String ownerFullName;
     private String accountNumber;
     private double balance;
-    private static final Logger logger = LogManager.getLogger("log4jdemo.org.example.BankingAccount");
+    private static final Logger logger = LogManager.getLogger(BankingAccount.class);
 
     // Constructor
     public BankingAccount(String ownerFullName, String accountNumber) {

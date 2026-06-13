@@ -8,9 +8,9 @@ import java.util.Scanner;
 
 public class MyFile
 {
-    private static final Logger logger = LogManager.getLogger("save_read_data.MyFile");
+    private static final Logger logger = LogManager.getLogger(MyFile.class);
 
-    public void readDataFromFile(String filePath)
+    public static void readDataFromFile(String filePath)
     {
         File myObj = new File(filePath);
 
@@ -24,7 +24,7 @@ public class MyFile
 
         }
     }
-    public void saveDataToFile(String filePath){
+    public static void saveDataToFile(String filePath){
         String dataToWrite = "Hello";
         File myObj = new File(filePath);
 
@@ -32,7 +32,6 @@ public class MyFile
             writer.write(dataToWrite);
         } catch (IOException e) {
             logger.error("error during opening file: {}",filePath);
-            throw new RuntimeException(e);
         }
     }
 }

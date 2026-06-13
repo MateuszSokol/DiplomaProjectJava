@@ -7,8 +7,8 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class PasswordUtils {
-    private static final Logger logger = LogManager.getLogger("user_login.PasswordUtils");
-    private static PasswordUtils INSTANCE;
+    private static final Logger logger = LogManager.getLogger(PasswordUtils.class);
+    private static PasswordUtils instance;
     private PasswordUtils()
     {
 
@@ -16,11 +16,11 @@ public class PasswordUtils {
     }
     public static PasswordUtils getInstance()
     {
-        if(INSTANCE == null) {
-            INSTANCE = new PasswordUtils();
+        if(instance == null) {
+            instance = new PasswordUtils();
         }
 
-        return INSTANCE;
+        return instance;
     }
 
 
