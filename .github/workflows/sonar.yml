@@ -32,13 +32,13 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          mvn sonar:sonar \
-          -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.organization=mateuszsokol \
-          -Dsonar.projectKey=DiplomaProjectJava \
-          -Dsonar.sources=src/main/java \
-          -Dsonar.tests=src/test/java \
-          -Dsonar.java.binaries=target/classes \
-          -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
-          -Dsonar.login=$SONAR_TOKEN
+         mvn sonar:sonar \
+         -Dsonar.host.url=https://sonarcloud.io \
+         -Dsonar.organization=mateuszsokol \
+         -Dsonar.projectKey=DiplomaProjectJava \
+         -Dsonar.sources=src/main/java \
+         -Dsonar.tests=src/test/java \
+         -Dsonar.java.binaries=target/classes \
+         -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
+         -Dsonar.login=$SONAR_TOKEN
 
