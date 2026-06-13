@@ -9,7 +9,13 @@ import java.util.Scanner;
 
 public class LogIn {
 
+
     private static final Logger logger = LogManager.getLogger(LogIn.class);
+    private LogIn()
+    {
+        
+    }
+
     public static void authenticate(String pathToFile) {
 
         File file = new File(pathToFile);

@@ -10,6 +10,12 @@ public class MyFile
 {
     private static final Logger logger = LogManager.getLogger(MyFile.class);
 
+    private MyFile()
+    {
+
+    }
+
+
     public static void readDataFromFile(String filePath)
     {
         File myObj = new File(filePath);
