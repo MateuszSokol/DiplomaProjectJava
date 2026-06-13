@@ -62,3 +62,10 @@
 22:40:38 [main] ERROR save_read_data.MyFile - File not found in path: C:/this/file/does/not/exist.txt
 22:40:38 [main] INFO  save_read_data.MyFile - Line1
 22:40:38 [main] INFO  save_read_data.MyFile - Line2
+00:41:19 [main] INFO  user_login.LogIn - Login: 
+00:41:19 [main] INFO  user_login.LogIn - Password: 
+00:41:19 [main] INFO  user_login.LogIn - Password and login match
+00:41:19 [main] INFO  user_login.LogIn - Login: 
+00:41:19 [main] INFO  user_login.LogIn - Password: 
+00:41:19 [main] INFO  user_login.LogIn - Invalid password or login
+00:41:19 [main] ERROR user_login.LogIn - File not found
